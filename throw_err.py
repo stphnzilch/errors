@@ -4,7 +4,7 @@
 # user-supplied command line argument
 
 import sys
-
+import os
 def print_usage():
     """Print usage and exit"""
     sys.stderr.write("usage: python raise_err.py <error type>\n")
@@ -21,25 +21,40 @@ if len(sys.argv) != 2:
 error_type = sys.argv[1]
 
 if error_type == "assertion":
-    raise AssertionError
-elif error_type == "io":
-    raise IOError
+  
+   assert 9 == 10, "9 and 10 arn't equil"    
+
+elif error_type == "IO":
+    open('blah_blah-blah') 
 elif error_type == "import":
-    raise ImportError
+    from that_file.the_stuff import the_stuff
+
+elif error_type == "shoes":
+       socks = "nike"
+       if socks != "addidas":
+           raise "shoes"
+
 elif error_type == "index":
-    raise IndexError
+    gmo = "GMO4EVA"
+    a= gmo[666]
 elif error_type == "key":
-    raise KeyError
+    organic = {"n" : 1, "o" : 2, "g" : 3,"o" : 4, "o" : 5,"d" : 6}
+    print organic[9]
 elif error_type == "name":
-    raise NameError
+    n=rope()
+    n.nope()
+    class rope:
+        def nope():
+            print nope
 elif error_type == "os":
-    raise OSError
+    
+    os.ttyname(7)
 elif error_type == "type":
-    raise TypeError
+    'cow'**2
 elif error_type == "value":
-    raise ValueError
+    print(int('rrrr'))
 elif error_type == "zerodivision":
-    raise ZeroDivisionError
+    print 1/0
 else:
     sys.stderr.write("Sorry, not able to throw a(n) ")
     sys.stderr.write(error_type + " error\n")
