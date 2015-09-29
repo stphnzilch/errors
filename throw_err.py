@@ -24,7 +24,7 @@ if error_type == "assertion":
   
    assert 9 == 10, "9 and 10 arn't equil"    
 
-elif error_type == "IO":
+elif error_type == "io":
     open('blah_blah-blah') 
 elif error_type == "import":
     from that_file.the_stuff import the_stuff
